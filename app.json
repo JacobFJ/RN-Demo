@@ -1,0 +1,9 @@
+{
+  "name": "DemoApp",
+  "displayName": "DemoApp",
+  "expo": {
+    "name": "DemoApp",
+    "slug": "demo-app",
+    "sdkVersion": "44.0.0"
+  }
+}
