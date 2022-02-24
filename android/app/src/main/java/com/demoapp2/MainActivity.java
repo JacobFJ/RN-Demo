@@ -1,4 +1,4 @@
-package com.demoapp;
+package com.demoapp2;
 import expo.modules.ReactActivityDelegateWrapper;
 import com.facebook.react.ReactActivityDelegate;
 
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "DemoApp";
+    return "DemoApp2";
   }
 
   @Override

@@ -1,12 +1,12 @@
-package com.demoapp;
+package com.demoapp2;
 import android.content.res.Configuration;
 import expo.modules.ApplicationLifecycleDispatcher;
 import expo.modules.ReactNativeHostWrapper;
 import expo.modules.updates.UpdatesController;
 
+import android.net.Uri;
 import android.app.Application;
 import android.content.Context;
-import android.net.Uri;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -92,7 +92,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.demoapp.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.demoapp2.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);
