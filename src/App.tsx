@@ -8,7 +8,7 @@
  * @format
  */
 
- import React from 'react';
+ import React, { useEffect } from 'react';
  import {
    StyleSheet,
    Text,
@@ -24,18 +24,29 @@
  import * as Updates from 'expo-updates';
  
  const App = () => {
-   const handleCheckUpdate = async () => {
-     try {
-       const asd = await Updates.fetchUpdateAsync();
-       Alert.alert(JSON.stringify(asd));
-     } catch (error:any) {
-      Alert.alert(JSON.stringify(error.message));
-     }
-   }
+
+  useEffect(() => {
+    const timer = setInterval(async () => {
+      const update = await Updates.checkForUpdateAsync()
+      if (update.isAvailable) {
+       await Updates.fetchUpdateAsync();
+       await Updates.reloadAsync();
+      }
+    }, 3000)
+    return () => clearInterval(timer)
+  }, [])
+  // const handleCheckUpdate = async () => {
+  //    try {
+  //      const asd = await Updates.fetchUpdateAsync();
+  //      Alert.alert(JSON.stringify(asd));
+  //    } catch (error:any) {
+  //     Alert.alert(JSON.stringify(error.message));
+  //    }
+  //  }
  
-   const handleForceUpdate = async () => {
-     await Updates.reloadAsync();
-   }
+  //  const handleForceUpdate = async () => {
+  //    await Updates.reloadAsync();
+  //  }
  
    return (
     <NavigationContainer>
@@ -45,7 +56,7 @@
        <Text />
        <Button onPress={handleForceUpdate} title="Force Update" />
       */}
-        <BottomBar first={'Home'} second={'Profile'}></BottomBar>
+        <BottomBar first={'Wrong Texts'} second={'Profile'}></BottomBar>
      {/* </View> */}
      </NavigationContainer>
    );
