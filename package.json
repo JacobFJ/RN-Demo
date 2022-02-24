@@ -1,10 +1,8 @@
 {
-  "name": "demoapp",
+  "name": "demoapp2",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "prepare": "npx pod-install",
-    "install": "npm i",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
@@ -14,8 +12,8 @@
   "dependencies": {
     "expo": ">=44.0.0-0 <45.0.0",
     "expo-updates": "^0.11.6",
-    "react": "17.0.2",
-    "react-native": "0.67.3"
+    "react": "~17.0.1",
+    "react-native": "~0.64.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
