@@ -16,6 +16,10 @@
    View,
    Alert
  } from 'react-native';
+
+ import { NavigationContainer } from '@react-navigation/native';
+
+ import { BottomBar } from "./components/bottomBar"
  
  import * as Updates from 'expo-updates';
  
@@ -34,12 +38,16 @@
    }
  
    return (
-     <View style={styles.container}>
-       <Text>Release4: {Updates.manifest?.metadata}</Text>
+    <NavigationContainer>
+     {/* <View style={styles.container}>
+       <Text>Release5: {Updates.manifest?.metadata}</Text>
        <Button onPress={handleCheckUpdate} title="Check Update" />
        <Text />
        <Button onPress={handleForceUpdate} title="Force Update" />
-     </View>
+      */}
+        <BottomBar first={'Home'} second={'Profile'}></BottomBar>
+     {/* </View> */}
+     </NavigationContainer>
    );
  }
  
